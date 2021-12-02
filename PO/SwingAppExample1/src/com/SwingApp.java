@@ -1,4 +1,6 @@
 package com;
+import com.models.Person;
+
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
@@ -73,7 +75,7 @@ public SwingApp(){
                 textEmail.setText(p.getEmail());
                 textPhoneNumber.setText(p.getPhoneNumber());
                 textAddress.setText(p.getAddress());
-                textDateBirth.setText(p.getDateofBirth().format(DateTimeFormatter.ofPattern("dd/MM/yyyya")));
+                textDateBirth.setText(p.getDateofBirth().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
                 JLabelAge.setText(Integer.toString(p.getAge())+"lat/lata");
                 buttonSave.setEnabled(true);
             }else{
@@ -104,7 +106,7 @@ public SwingApp(){
 
     }
 
-    public void addPerson(Person p){
+    public void addPerson(Person p) {
         people.add(p);
         refreshPeopleList();
     }
